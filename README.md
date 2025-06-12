@@ -29,6 +29,8 @@ Which age groups send more SMS messages than make phone calls?
 **Question:**  
 How does the number of distinct calls differ by age group and call length (Short, Medium, Long)?
 
+![Call Length Bar Chart](images/plot_distinct_calls.png)
+
 **Skills:**  
 - Feature engineering (binning with custom thresholds)
 - Grouped aggregation and reshaping
