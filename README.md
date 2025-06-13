@@ -75,12 +75,3 @@ Are there significant differences in call durations between pay-as-you-go and co
 - Communicating findings in a structured, interpretable format
 
 ---
-
-## 📌 How to Run
-
-1. Clone this repository  
-2. Ensure `customer_churn.csv` is in a `data/` folder  
-3. Run the notebook in Jupyter or VSCode
-
-```bash
-jupyter notebook telecom_churn_analysis.ipynb
