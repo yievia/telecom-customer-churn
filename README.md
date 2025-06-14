@@ -62,7 +62,7 @@ The dataset includes:
 
 ## 📊 Confusion Matrix (Random Forest)
 
-![Confusion Matrix](path_to_your_confusion_matrix_image.png)
+![Confusion Matrix](images/confusion_matrix.png)
 
 - **True Positives (120)**: Correctly predicted churners  
 - **False Positives (16)**: Non-churners wrongly flagged  
@@ -73,7 +73,7 @@ The dataset includes:
 
 ## 🧠 Feature Importance
 
-![Feature Importance](path_to_your_feature_importance_plot.png)
+![Feature Importance](images/feature_importance_plot.png)
 
 Key predictors: service status, call duration, engagement level, and customer lifecycle.
 
