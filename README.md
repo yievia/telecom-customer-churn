@@ -1,77 +1,113 @@
-# Telecom Customer Churn Analysis
+# 📈 Telecom Customer Churn Prediction
 
-This project analyzes customer behavior for a telecom company using real-world customer data. It focuses on answering specific business questions through data exploration, visualization, and statistical testing.
-
-## Dataset Source
-
-**Jafari-Marandi, R., Denton, J., Idris, A., Smith, B. K., & Keramati, A. (2020)**  
-*Optimum Profit-Driven Churn Decision Making: Innovative Artificial Neural Networks in Telecom Industry*  
-Published in *Neural Computing and Applications*
-
-> Dataset includes 3,150 customer records with features such as call usage, complaints, subscription type, customer value, and churn status.
-
-## Project Goals
-
-This notebook is structured around three mini-challenges designed to explore different aspects of the dataset and demonstrate applied data science skills.
-
-### Challenge 1: SMS vs Call Usage by Age Group
-**Question:**  
-Which age groups send more SMS messages than make phone calls?
-
-**Skills:**  
-- Grouped aggregation with `groupby()`
-- Conditional logic and boolean masking
-- Age-based behavior analysis
+A data science project to predict customer churn using behavioral metrics from a telecom provider. The project covers end-to-end steps from data exploration and feature engineering to model training and interpretation — with actionable business insights.
 
 ---
 
-### Challenge 2: Visualizing Distinct Phone Calls by Call Length
-**Question:**  
-How does the number of distinct calls differ by age group and call length (Short, Medium, Long)?
+## 📌 Project Overview
 
-![Call Length Bar Chart](images/plot_distinct_calls.png)
-
-**Skills:**  
-- Feature engineering (binning with custom thresholds)
-- Grouped aggregation and reshaping
-- Visualization with `seaborn.barplot()`
+Customer churn is a key concern in the telecom industry due to its direct impact on revenue and customer lifetime value. In this project, we developed a machine learning model that classifies customers as likely to churn or not, based on usage patterns, demographics, and service interactions.
 
 ---
 
-### Challenge 3: Statistical Analysis by Tariff Plan
-**Question:**  
-Are there significant differences in call durations between pay-as-you-go and contractual customers?
+## 🧠 Objectives
 
-**Skills:**  
-- Hypothesis testing (Welch’s t-test)
-- Statistical inference and interpretation
-- Practical application of `scipy.stats.ttest_ind()`
-
----
-
-## Technologies Used
-
-- Python
-- pandas, NumPy
-- seaborn, matplotlib
-- scipy
+- Analyze telecom customer behavior through exploratory data analysis (EDA)
+- Identify key drivers of churn
+- Build and evaluate classification models
+- Provide business recommendations based on model outputs
+- Prepare the model for deployment and integration into CRM systems
 
 ---
 
-## Key Findings
+## 🗂️ Dataset Overview
 
-- Age Groups **2** and **3** send more SMS than make calls.
-- Long calls dominate across all age groups, especially in **Groups 2 and 3**.
-- **Contractual customers (Plan 2)** make **significantly longer calls** than **pay-as-you-go users (Plan 1)**, with a p-value < 0.001.
+The dataset includes:
+- Customer demographics
+- Call duration and frequency
+- SMS usage
+- Account status and complaints
+- Subscription length and customer value
+
+📁 Source: Provided as `customer_churn.csv` (confidential)
 
 ---
 
-## Skills Demonstrated
+## 🔍 Exploratory Insights
 
-- Data wrangling and aggregation
-- Exploratory Data Analysis (EDA)
-- Statistical hypothesis testing
-- Plotting and interpretation for business insights
-- Communicating findings in a structured, interpretable format
+- Younger age groups favor SMS over calls
+- Customers with complaints, short subscription history, and low usage are at higher churn risk
+- High-value customers with stable, long-term usage patterns are more loyal
+
+📊 Key Features Identified:
+- `Status_1`, `Status_2` (account flags)
+- `Seconds of Use`, `Frequency of Use`
+- `Customer Value`, `Subscription Length`
+- `Complaint`, `Distinct Called Numbers`
+
+---
+
+## 🤖 Model Comparison
+
+| Metric (Churn Class) | Logistic Regression | Random Forest |
+|----------------------|---------------------|---------------|
+| Precision            | 51.0%               | **88.2%**     |
+| Recall               | **89.9%**           | 81.1%         |
+| F1-score             | 65.0%               | **84.5%**     |
+| Accuracy             | 84.9%               | **95.3%**     |
+
+✅ **Random Forest** chosen as final model for deployment due to its superior balance of precision and recall.
+
+---
+
+## 📊 Confusion Matrix (Random Forest)
+
+![Confusion Matrix](path_to_your_confusion_matrix_image.png)
+
+- **True Positives (120)**: Correctly predicted churners  
+- **False Positives (16)**: Non-churners wrongly flagged  
+- **False Negatives (28)**: Missed churners  
+- **True Negatives (781)**: Correctly predicted non-churners
+
+---
+
+## 🧠 Feature Importance
+
+![Feature Importance](path_to_your_feature_importance_plot.png)
+
+Key predictors: service status, call duration, engagement level, and customer lifecycle.
+
+---
+
+## 🚀 Deployment Plan
+
+- Save model using `joblib`
+- Deploy with a simple Streamlit or Flask API
+- Weekly scoring pipeline + CRM integration for automated retention targeting
+
+---
+
+## 💡 Business Recommendations
+
+- Focus on customers with complaints, low recent usage, or short tenure
+- Launch early-intervention campaigns for new users
+- Use prediction scores to prioritize support and loyalty rewards
+
+---
+
+## 🧾 Tools Used
+
+- Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
+- Jupyter Notebook
+- Machine Learning: Logistic Regression, Random Forest
+- Streamlit (for future deployment)
+
+---
+
+## 📈 Results Summary
+
+This project demonstrates how machine learning can turn raw behavioral data into real business impact. By predicting churn with high accuracy, companies can intervene earlier and reduce customer loss.
+
+> 🔧 Ready to scale, interpret, and deploy in a business setting.
 
 ---
